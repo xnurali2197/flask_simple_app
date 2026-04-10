@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}About - Flask Hello World{% endblock %}
+
+{% block content %}
+<div class="emoji">ℹ️</div>
+
+<h2>About This Application</h2>
+
+<div class="info-box">
+    <strong>📱 Application Info:</strong><br>
+    <strong>Name:</strong> {{ app_info.name }}<br>
+    <strong>Version:</strong> {{ app_info.version }}<br>
+    <strong>Created:</strong> {{ app_info.created }}
+</div>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">Description</h3>
+<p>{{ app_info.description }}</p>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">What is Flask?</h3>
+<p>
+    Flask is a lightweight and flexible Python web framework that makes it easy to build web applications. 
+    It provides the essentials for web development without imposing too many architectural constraints.
+</p>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">Key Features of This App</h3>
+<ul style="margin-left: 2rem; color: #555;">
+    <li><strong>Routing:</strong> Multiple URL routes for different pages</li>
+    <li><strong>Templating:</strong> Jinja2 template engine for dynamic content</li>
+    <li><strong>Forms:</strong> Form handling and processing</li>
+    <li><strong>APIs:</strong> JSON API endpoints</li>
+    <li><strong>Error Handling:</strong> Custom error pages</li>
+</ul>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">Project Structure</h3>
+<div class="code-block">
+app.py                   # Main Flask application<br>
+templates/               # HTML template files<br>
+├── base.html           # Base template<br>
+├── index.html          # Home page<br>
+├── about.html          # This page<br>
+├── user.html           # User greeting<br>
+├── contact.html        # Contact form<br>
+├── success.html        # Form success<br>
+├── 404.html            # Error page<br>
+└── 500.html            # Error page
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Back to Home →
+    </a>
+</p>
+{% endblock %}

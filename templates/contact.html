@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - Flask Hello World{% endblock %}
+
+{% block content %}
+<div class="emoji">📝</div>
+
+<h2>Contact Form</h2>
+
+<p>Fill out the form below and click submit to test form handling in Flask.</p>
+
+<form method="POST" action="/form" style="margin-top: 1.5rem;">
+    <div style="margin-bottom: 1.5rem;">
+        <label for="name" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">
+            Your Name <span style="color: #e74c3c;">*</span>
+        </label>
+        <input 
+            type="text" 
+            id="name" 
+            name="name" 
+            required 
+            placeholder="Enter your full name"
+            style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 0.95rem;"
+        >
+    </div>
+
+    <div style="margin-bottom: 1.5rem;">
+        <label for="email" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">
+            Your Email <span style="color: #e74c3c;">*</span>
+        </label>
+        <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="your@email.com"
+            style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 0.95rem;"
+        >
+    </div>
+
+    <div style="margin-bottom: 1.5rem;">
+        <label for="message" style="display: block; font-weight: 600; margin-bottom: 0.5rem; color: #333;">
+            Message <span style="color: #e74c3c;">*</span>
+        </label>
+        <textarea 
+            id="message" 
+            name="message" 
+            required 
+            placeholder="Write your message here..."
+            style="width: 100%; padding: 0.75rem; border: 2px solid #ddd; border-radius: 4px; font-family: inherit; font-size: 0.95rem; min-height: 120px; resize: vertical;"
+        ></textarea>
+    </div>
+
+    <button 
+        type="submit" 
+        style="width: 100%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.875rem; border: none; border-radius: 4px; font-size: 1rem; font-weight: 600; cursor: pointer; transition: transform 0.3s;"
+        onmouseover="this.style.transform='translateY(-2px)'"
+        onmouseout="this.style.transform='translateY(0)'"
+    >
+        Submit Form
+    </button>
+</form>
+
+<div class="info-box" style="margin-top: 2rem;">
+    <strong>ℹ️ Note:</strong> This is a demonstration form. In a real application, 
+    you would connect this to a database or email service to actually save or send the data.
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/" style="color: #667eea; text-decoration: none; font-weight: 600;">← Back to Home</a>
+</p>
+{% endblock %}

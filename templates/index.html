@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Flask Hello World{% endblock %}
+
+{% block content %}
+<div class="emoji">👋</div>
+
+<h2>Welcome to Flask!</h2>
+
+<p>
+    Hello! This is a simple Flask web application demonstrating the basics of:
+</p>
+
+<ul style="margin-left: 2rem; color: #555;">
+    <li>Basic routing and URL handling</li>
+    <li>Template rendering with Jinja2</li>
+    <li>Passing data to templates</li>
+    <li>Static file serving</li>
+    <li>Form handling</li>
+</ul>
+
+<div class="info-box">
+    <strong>📅 Current Time:</strong><br>
+    <span class="time">{{ time }}</span>
+</div>
+
+<p style="margin-top: 1.5rem;">
+    <strong>🔗 Try these routes:</strong>
+</p>
+
+<div class="code-block">
+/about         - Learn about this app<br>
+/user/&lt;name&gt;   - Get personalized greeting<br>
+/form          - Submit a contact form<br>
+/api/hello     - Try the JSON API
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/user/Developer" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Get Your Greeting →
+    </a>
+</p>
+{% endblock %}

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Hello {{ name }} - Flask Hello World{% endblock %}
+
+{% block content %}
+<div class="emoji">👤</div>
+
+<h2>Hello, {{ name }}! 👋</h2>
+
+<div class="success-box">
+    <strong>Welcome!</strong><br>
+    We're thrilled to have you here. This page is personalized just for you!
+</div>
+
+<p>
+    This is an example of dynamic routing in Flask. The URL parameter <strong>/user/{{ name }}</strong> 
+    is captured by the application and used to create a personalized greeting.
+</p>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">How This Works</h3>
+
+<p>When you visit <code>/user/YOUR_NAME</code>, Flask:</p>
+
+<ol style="margin-left: 2rem; color: #555;">
+    <li>Receives your name from the URL</li>
+    <li>Passes it to the view function as a parameter</li>
+    <li>Renders this template with your personalized name</li>
+    <li>Displays the customized greeting</li>
+</ol>
+
+<div class="code-block">
+@app.route('/user/&lt;name&gt;')<br>
+def user(name):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;return render_template('user.html', name=name)
+</div>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">Try It Yourself</h3>
+
+<p>Change the name in the URL to get different greetings:</p>
+
+<div class="code-block">
+/user/alice<br>
+/user/bob<br>
+/user/yourname
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/user/friend" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block; margin-right: 0.5rem;">
+        Say Hello to Friend
+    </a>
+    <a href="/" style="background: #764ba2; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Back to Home
+    </a>
+</p>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}404 - Page Not Found{% endblock %}
+
+{% block content %}
+<div class="emoji">😕</div>
+
+<h2>404 - Page Not Found</h2>
+
+<p>
+    Oops! The page you're looking for doesn't exist or has been moved.
+</p>
+
+<div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 1rem; margin: 1rem 0; border-radius: 4px; color: #856404;">
+    <strong>Error 404:</strong> The requested resource could not be found.
+</div>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">What You Can Do</h3>
+
+<ul style="margin-left: 2rem; color: #555;">
+    <li>Check the URL and make sure it's correct</li>
+    <li>Go back to the <a href="/" style="color: #667eea;">home page</a></li>
+    <li>Use the navigation menu above to find what you're looking for</li>
+</ul>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">Available Routes</h3>
+
+<div class="code-block">
+GET  /          - Home page<br>
+GET  /about     - About page<br>
+GET  /user/&lt;name&gt;   - Personalized greeting<br>
+GET  /form      - Contact form<br>
+POST /form      - Submit contact form<br>
+GET  /api/hello - JSON API
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Go to Home →
+    </a>
+</p>
+{% endblock %}

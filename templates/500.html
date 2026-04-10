@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}500 - Server Error{% endblock %}
+
+{% block content %}
+<div class="emoji">⚠️</div>
+
+<h2>500 - Internal Server Error</h2>
+
+<p>
+    Something went wrong on our end. We apologize for the inconvenience.
+</p>
+
+<div style="background: #f8d7da; border-left: 4px solid #dc3545; padding: 1rem; margin: 1rem 0; border-radius: 4px; color: #721c24;">
+    <strong>Error 500:</strong> An internal server error has occurred.
+</div>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">What Happened?</h3>
+
+<p>
+    An unexpected error occurred while processing your request. The development team has been notified 
+    and will investigate the issue.
+</p>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">What You Can Do</h3>
+
+<ul style="margin-left: 2rem; color: #555;">
+    <li>Refresh the page and try again</li>
+    <li>Clear your browser cache</li>
+    <li>Go back to the <a href="/" style="color: #667eea;">home page</a></li>
+    <li>Try a different page or feature</li>
+    <li>Contact support if the problem persists</li>
+</ul>
+
+<div class="info-box" style="margin-top: 1.5rem;">
+    <strong>💡 Debugging Tip:</strong> In development mode, Flask will show detailed error messages 
+    in the terminal/console where the application is running. Check there for more information.
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Go to Home →
+    </a>
+</p>
+{% endblock %}

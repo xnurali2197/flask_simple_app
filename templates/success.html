@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Success - Flask Hello World{% endblock %}
+
+{% block content %}
+<div class="emoji">✅</div>
+
+<h2>Thank You, {{ name }}!</h2>
+
+<div class="success-box">
+    <strong>Your message was received!</strong><br>
+    We appreciate you reaching out to us.
+</div>
+
+<p style="margin-top: 1.5rem;">
+    <strong>Here's what we received:</strong>
+</p>
+
+<div class="info-box">
+    <strong>Name:</strong> {{ name }}<br>
+    <strong>Email:</strong> {{ email }}<br>
+    <strong>Status:</strong> ✅ Successfully submitted
+</div>
+
+<p style="margin-top: 1.5rem;">
+    Thank you for contacting us! We've received your message and will get back to you 
+    as soon as possible at the email address you provided.
+</p>
+
+<h3 style="color: #667eea; margin-top: 1.5rem; margin-bottom: 0.75rem;">What Happened?</h3>
+
+<p>
+    In this demonstration:
+</p>
+
+<ol style="margin-left: 2rem; color: #555;">
+    <li>You filled out and submitted the contact form</li>
+    <li>Flask received the data via POST request</li>
+    <li>The form data was processed by the <code>contact_form()</code> function</li>
+    <li>This success page was rendered with your information</li>
+</ol>
+
+<div class="code-block">
+@app.route('/form', methods=['GET', 'POST'])<br>
+def contact_form():<br>
+&nbsp;&nbsp;&nbsp;&nbsp;if request.method == 'POST':<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;name = request.form.get('name')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;email = request.form.get('email')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;message = request.form.get('message')<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# Process data here...<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return render_template('success.html'...)
+</div>
+
+<p style="margin-top: 1.5rem; text-align: center;">
+    <a href="/form" style="background: #667eea; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block; margin-right: 0.5rem;">
+        Submit Another
+    </a>
+    <a href="/" style="background: #764ba2; color: white; padding: 0.75rem 1.5rem; border-radius: 4px; display: inline-block;">
+        Back to Home
+    </a>
+</p>
+{% endblock %}
